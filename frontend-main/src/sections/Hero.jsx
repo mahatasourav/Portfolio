@@ -54,11 +54,11 @@ const Hero = () => {
           </div>
         </div>
         {/* Right Image */}
-        <div className="w-full lg:w-1/2">
+        <div className="w-full lg:w-1/2 hidden sm:block">
           <img
             src={souravimg}
             alt="Hero Image"
-            className="w-full max-w-md mx-auto lg:max-w-lg rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300 border-4 "
+            className="w-full max-w-md mx-auto lg:max-w-lg rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300 border-4 sm:block hidden"
             style={{
               width: "350px",
               height: "450px",

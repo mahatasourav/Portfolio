@@ -2,7 +2,7 @@ import souravimg2 from "../assets/souravimg.jpg";
 const About = () => {
   return (
     <section id="about" className="bg-gray-100 py-16">
-      <div className="container mx-auto px-6 lg:px-20 flex flex-col md:flex-row items-center">
+      <div className="container mx-auto px-6 lg:px-20 flex flex-col-reverse md:flex-row items-center gap-10 ">
         {/* Left Side - Image */}
         <div className="w-full md:w-1/2">
           <img

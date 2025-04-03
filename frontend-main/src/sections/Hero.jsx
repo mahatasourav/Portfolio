@@ -9,7 +9,7 @@ const Hero = () => {
       id="home"
       className="h-screen flex items-center justify-center bg-gray-100"
     >
-      <div className="container mx-auto px-6 lg:px-20 flex flex-col-reverse lg:flex-row items-center gap-10">
+      <div className="container mx-auto px-6 lg:px-20 flex flex-col lg:flex-row items-center gap-10">
         {/* Left Content */}
         <div
           className="text-center lg:text-left max-w-xl animate-fade-in"

@@ -7,6 +7,10 @@ import { FaTwitter } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
 
 const Contact = () => {
+  const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+  const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+  const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+  const mailboxApiKey = import.meta.env.VITE_MAILBOXLAYER_API_KEY;
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -22,6 +26,27 @@ const Contact = () => {
     });
   };
 
+  const validateEmail = async (email) => {
+    const apiKey = mailboxApiKey; // replace with your real key
+    const url = `https://apilayer.net/api/check?access_key=${apiKey}&email=${email}&smtp=1&format=1`;
+
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+
+      console.log(data);
+
+      if (data.format_valid && data.smtp_check) {
+        return true; // Valid email
+      } else {
+        return false; // Invalid email
+      }
+    } catch (error) {
+      console.error("Email validation failed:", error);
+      return false;
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus("loading");
@@ -33,19 +58,28 @@ const Contact = () => {
       setStatus("error");
       return;
     }
+
     console.log("formData.name", formData.name);
     console.log("formData.email", formData.email);
     console.log("formData.message", formData.message);
+
+    const isEmailValid = await validateEmail(formData.email);
+
+    if (!isEmailValid) {
+      setError("Please enter a valid email address");
+      setStatus("error");
+      return;
+    }
     try {
       await emailjs.send(
-        "service_tsr2tht",
-        "template_nsm9wlx",
+        serviceId,
+        templateId,
         {
           from_name: formData.name,
           reply_to: formData.email,
           message: formData.message,
         },
-        "V1sDKiKt7g0T1aX7g"
+        publicKey
       );
       setStatus("success");
       setFormData({ name: "", email: "", message: "" });

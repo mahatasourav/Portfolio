@@ -8,6 +8,7 @@ import {
   FaEnvelope,
   FaCode,
 } from "react-icons/fa";
+import { Link } from "react-scroll"; // import it
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -49,7 +50,7 @@ const Navbar = () => {
           >
             <FaCode className="text-3xl text-blue-600 dark:text-blue-400" />
             <h1 className="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">
-              Sourav's Portfolio
+              Sourav Mahata | Portfolio
             </h1>
           </motion.div>
 

@@ -1,98 +1,138 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { FaReact, FaNodeJs, FaGitAlt, FaGithub } from "react-icons/fa";
+import {
+  FaReact,
+  FaNodeJs,
+  FaGitAlt,
+  FaGithub,
+  FaHtml5,
+  FaCss3Alt,
+  FaTools,
+  FaLaptopCode,
+} from "react-icons/fa";
 import {
   SiTailwindcss,
   SiJavascript,
   SiMongodb,
   SiExpress,
   SiVercel,
+  SiEjs,
 } from "react-icons/si";
 import { TbBrandCpp } from "react-icons/tb";
 import { BsFillLightningFill, BsKanbanFill } from "react-icons/bs";
 import { GiBrain } from "react-icons/gi";
 
 const skillsData = {
-  "Frontend Development": [
-    {
-      name: "React.js",
-      percentage: 85,
-      color: "bg-blue-500 dark:bg-blue-400",
-      icon: <FaReact className="text-[#61DAFB]" />,
-    },
-    {
-      name: "Tailwind CSS",
-      percentage: 90,
-      color: "bg-indigo-500 dark:bg-indigo-400",
-      icon: <SiTailwindcss className="text-[#06B6D4]" />,
-    },
-    {
-      name: "JavaScript",
-      percentage: 88,
-      color: "bg-yellow-500 dark:bg-yellow-400",
-      icon: <SiJavascript className="text-[#F7DF1E]" />,
-    },
-  ],
-  "Backend Development": [
-    {
-      name: "Node.js",
-      percentage: 80,
-      color: "bg-green-500 dark:bg-green-400",
-      icon: <FaNodeJs className="text-[#339933]" />,
-    },
-    {
-      name: "MongoDB",
-      percentage: 75,
-      color: "bg-emerald-500 dark:bg-emerald-400",
-      icon: <SiMongodb className="text-[#47A248]" />,
-    },
-    {
-      name: "Express.js",
-      percentage: 82,
-      color: "bg-gray-500 dark:bg-gray-400",
-      icon: <SiExpress className="text-gray-800 dark:text-white" />,
-    },
-  ],
-  Tools: [
-    {
-      name: "Git",
-      percentage: 80,
-      color: "bg-green-500 dark:bg-green-400",
-      icon: <FaGitAlt className="text-[#F05032]" />,
-    },
-    {
-      name: "GitHub",
-      percentage: 75,
-      color: "bg-emerald-500 dark:bg-emerald-400",
-      icon: <FaGithub className="text-gray-800 dark:text-white" />,
-    },
-    {
-      name: "Vercel",
-      percentage: 82,
-      color: "bg-gray-500 dark:bg-gray-400",
-      icon: <SiVercel className="text-black dark:text-white" />,
-    },
-  ],
-  "Programming & DSA": [
-    {
-      name: "C++",
-      percentage: 85,
-      color: "bg-red-500 dark:bg-red-400",
-      icon: <TbBrandCpp className="text-[#00599C]" />,
-    },
-    {
-      name: "DSA",
-      percentage: 80,
-      color: "bg-purple-500 dark:bg-purple-400",
-      icon: <BsFillLightningFill className="text-[#FFD700]" />,
-    },
-    {
-      name: "Problem Solving",
-      percentage: 85,
-      color: "bg-orange-500 dark:bg-orange-400",
-      icon: <GiBrain className="text-[#FF6B6B]" />,
-    },
-  ],
+  " Frontend Development": {
+    icon: <FaLaptopCode className="text-2xl text-yellow-500" />,
+    skills: [
+      {
+        name: "React.js",
+        percentage: 85,
+        color: "bg-blue-500 dark:bg-blue-400",
+        icon: <FaReact className="text-[#61DAFB]" />,
+      },
+      {
+        name: "HTML",
+        percentage: 95,
+        color: "bg-orange-500 dark:bg-orange-400",
+        icon: <FaHtml5 className="text-[#E34F26]" />,
+      },
+      {
+        name: "CSS",
+        percentage: 90,
+        color: "bg-blue-500 dark:bg-blue-400",
+        icon: <FaCss3Alt className="text-[#1572B6]" />,
+      },
+      {
+        name: "EJS",
+        percentage: 85,
+        color: "bg-yellow-500 dark:bg-yellow-400",
+        icon: <SiEjs className="text-[#B4CA65]" />,
+      },
+      {
+        name: "Tailwind CSS",
+        percentage: 90,
+        color: "bg-indigo-500 dark:bg-indigo-400",
+        icon: <SiTailwindcss className="text-[#06B6D4]" />,
+      },
+      {
+        name: "JavaScript",
+        percentage: 88,
+        color: "bg-yellow-500 dark:bg-yellow-400",
+        icon: <SiJavascript className="text-[#F7DF1E]" />,
+      },
+    ],
+  },
+  "Backend Development": {
+    icon: <FaNodeJs className="text-2xl text-green-500" />,
+    skills: [
+      {
+        name: "Node.js",
+        percentage: 80,
+        color: "bg-green-500 dark:bg-green-400",
+        icon: <FaNodeJs className="text-[#339933]" />,
+      },
+      {
+        name: "MongoDB",
+        percentage: 75,
+        color: "bg-emerald-500 dark:bg-emerald-400",
+        icon: <SiMongodb className="text-[#47A248]" />,
+      },
+      {
+        name: "Express.js",
+        percentage: 82,
+        color: "bg-gray-500 dark:bg-gray-400",
+        icon: <SiExpress className="text-gray-800 dark:text-white" />,
+      },
+    ],
+  },
+  Tools: {
+    icon: <FaTools className="text-2xl text-gray-500" />,
+    skills: [
+      {
+        name: "Git",
+        percentage: 80,
+        color: "bg-green-500 dark:bg-green-400",
+        icon: <FaGitAlt className="text-[#F05032]" />,
+      },
+      {
+        name: "GitHub",
+        percentage: 75,
+        color: "bg-emerald-500 dark:bg-emerald-400",
+        icon: <FaGithub className="text-gray-800 dark:text-white" />,
+      },
+      {
+        name: "Vercel",
+        percentage: 82,
+        color: "bg-gray-500 dark:bg-gray-400",
+        icon: <SiVercel className="text-black dark:text-white" />,
+      },
+    ],
+  },
+  "Programming & DSA": {
+    icon: <GiBrain className="text-2xl text-purple-500" />,
+    skills: [
+      {
+        name: "C++",
+        percentage: 85,
+        color: "bg-red-500 dark:bg-red-400",
+        icon: <TbBrandCpp className="text-[#00599C]" />,
+      },
+      {
+        name: "DSA",
+        percentage: 80,
+        color: "bg-purple-500 dark:bg-purple-400",
+        icon: <BsFillLightningFill className="text-[#FFD700]" />,
+      },
+      {
+        name: "Problem Solving",
+        percentage: 85,
+        color: "bg-orange-500 dark:bg-orange-400",
+        icon: <GiBrain className="text-[#FF6B6B]" />,
+      },
+    ],
+  },
 };
 
 const Skills = () => {
@@ -138,12 +178,13 @@ const Skills = () => {
             <button
               key={category}
               onClick={() => setActiveCategory(category)}
-              className={`px-6 py-2 rounded-full transition-all duration-300 ${
+              className={`px-6 py-2 rounded-full transition-all duration-300 flex items-center gap-2 ${
                 activeCategory === category
                   ? "bg-blue-500 text-white shadow-lg scale-105"
                   : "bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600"
               }`}
             >
+              {skillsData[category].icon}
               {category}
             </button>
           ))}
@@ -151,7 +192,7 @@ const Skills = () => {
 
         {/* Skills Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {skillsData[activeCategory].map((skill, index) => (
+          {skillsData[activeCategory].skills.map((skill, index) => (
             <motion.div
               key={skill.name}
               initial={{ opacity: 0, y: 20 }}

@@ -2,23 +2,27 @@ const experienceData = [
   {
     company: "Class_Suru (Educational Platform)",
     role: "Frontend Developer Intern",
-    duration: "Jan 2025 - Present",
+    duration: "Jan 2025 - Apr 2025",
     description:
       "Developed and optimized the frontend using React.js and Tailwind CSS for an interactive learning platform.",
+    companyLink: "https://classsuru.in", // Added companyLink
   },
   {
     company: "Hackerspace, MSIT",
     role: "DSA Mentor",
-    duration: "Feb 2024 - Present",
+    duration: "Feb 2024 - Mar 2025",
     description:
       "Guiding students in mastering Data Structures and Algorithms through problem-solving sessions and mentorship.",
+    companyLink: "https://hackerspacemsit.in", // Added companyLink
   },
   {
     company: "Greenovation Club, MSIT",
     role: "Executive Member",
-    duration: "2023 - Present",
+    duration: "Oct 2023 - Nov 2024",
     description:
       "Organized tech-driven sustainability initiatives and hackathons to promote green technology.",
+    companyLink:
+      "https://www.linkedin.com/company/greenovation-club-meghnad-saha-institute-of-technology/", // Added companyLink
   },
 ];
 
@@ -41,7 +45,14 @@ const Experience = () => {
                 <h3 className="text-xl font-bold text-gray-800 dark:text-gray-100 flex items-center gap-2">
                   {exp.role}
                   <span className="text-blue-500 dark:text-blue-400">@</span>
-                  {exp.company}
+                  <a
+                    href={exp.companyLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-bold underline "
+                  >
+                    {exp.company}
+                  </a>
                 </h3>
                 <p className="text-sm text-blue-500 dark:text-blue-400 font-medium mt-1">
                   {exp.duration}

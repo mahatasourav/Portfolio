@@ -1,5 +1,7 @@
 import classsuru from "../assets/project-classsuru.png";
 import focusflow from "../assets/project-focusflow.png";
+import airbnb from "../assets/project-airbnb.png";
+import { FaGithub } from "react-icons/fa";
 
 const projectsData = [
   {
@@ -17,16 +19,19 @@ const projectsData = [
       "Rest API",
     ],
     link: "https://classsuru.in",
-    image: classsuru, // Updated to use imported image
+    github: "https://github.com/mahatasourav/Class_Suru",
+    image: classsuru,
   },
   {
-    title: "Airbnb (Airbnb Clone)",
+    title: "Airbnb Clone",
     description:
-      "A full-stack e-commerce website inspired by Myntra, built with React, Redux, and Express.",
-    techStack: ["React", "Redux", "Express.js", "MongoDB"],
-    link: "https://github.com/sourav-myntra-clone",
-    image: "/assets/myntra-clone.png",
+      "A full-stack booking platform inspired by Airbnb, built using server-side rendering with EJS templates, Express.js, Node.js, and MongoDB (Mongoose). Users can browse listings, create accounts, and make property bookings.",
+    techStack: ["EJS", "Express.js", "Node.js", "MongoDB"],
+    link: "https://github.com/sourav-airbnb-clone",
+    github: "https://github.com/mahatasourav/airbnb-clone",
+    image: airbnb,
   },
+
   {
     title: "Focus Flow (Productivity App)",
     description:
@@ -43,6 +48,7 @@ const projectsData = [
       "Rest API",
     ],
     link: "https://focus-flow-pied.vercel.app/",
+    github: "https://github.com/mahatasourav/FocusFlow",
     image: focusflow,
   },
 ];
@@ -64,7 +70,7 @@ const Projects = () => {
               key={index}
               className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"
             >
-              <div className="relative">
+              <div className="relative pt-5 pl-5 pr-5">
                 <img
                   src={project.image}
                   alt={project.title}
@@ -89,14 +95,25 @@ const Projects = () => {
                     </span>
                   ))}
                 </div>
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block text-center mt-6 px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-medium transition-colors duration-300"
-                >
-                  View Project
-                </a>
+                <div className="flex gap-4 mt-6">
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 text-center px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-medium transition-colors duration-300"
+                  >
+                    View Project
+                  </a>
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 text-center px-4 py-2 rounded-lg bg-gray-900 hover:bg-gray-500 text-white font-medium transition-colors duration-300 flex items-center justify-center gap-2"
+                  >
+                    <FaGithub className="text-lg" />
+                    Source Code
+                  </a>
+                </div>
               </div>
             </div>
           ))}

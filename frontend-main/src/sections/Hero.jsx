@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
+import { FaFileAlt } from "react-icons/fa";
 
 const Hero = () => {
   const containerVariants = {
@@ -156,11 +157,12 @@ const Hero = () => {
             <motion.a
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              href="/resume.pdf"
+              href="/Sourav_Mahata_Resume.pdf"
+              rel="noopener noreferrer"
               target="_blank"
               className="px-8 py-4 border-2 border-gray-800 dark:border-gray-300 text-gray-800 dark:text-gray-300 font-bold rounded-lg hover:bg-gray-800 dark:hover:bg-gray-700 hover:text-white transition-all flex items-center justify-center gap-2"
             >
-              Download CV
+              <FaFileAlt className="text-xl" /> View CV
             </motion.a>
           </motion.div>
         </motion.div>

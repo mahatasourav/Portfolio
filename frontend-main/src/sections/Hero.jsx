@@ -1,4 +1,4 @@
-import souravimg from "../assets/souravimg1.png";
+import souravimg from "../assets/souravimg2.jpg";
 import { motion } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
@@ -181,7 +181,7 @@ const Hero = () => {
               className="w-full max-w-md mx-auto lg:max-w-lg rounded-2xl pb-10"
               style={{
                 width: "350px",
-                height: "450px",
+                height: "500px",
                 objectFit: "cover",
               }}
               whileHover={{ scale: 1.05 }}

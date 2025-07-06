@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import souravimg2 from "../assets/souravimg2.jpg";
+import souravimg2 from "../assets/souravimg1.png";
 
 const About = () => {
   return (

@@ -2,6 +2,8 @@ import classsuru from "../assets/project-classsuru.png";
 import focusflow from "../assets/project-focusflow.png";
 import airbnb from "../assets/project-airbnb.png";
 import { FaGithub } from "react-icons/fa";
+import docnest from "../assets/project-docnest.png";
+import souravportfolioImage from "../assets/project-souravportfolio.png"; // Replace with your actual portfolio image
 
 const projectsData = [
   {
@@ -23,6 +25,47 @@ const projectsData = [
     image: classsuru,
   },
   {
+    title: "DocNest (Doctor Appointment App)",
+    description:
+      "DocNest is a full-stack web app for booking doctor appointments and managing medical schedules through a simple, user-friendly platform.",
+    techStack: [
+      "React.js",
+      "Tailwind CSS",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Git",
+      "GitHub",
+      "Vercel",
+      "REST API",
+      "Axios",
+      "React Router",
+      "React Toastify",
+      "Context API",
+    ],
+    link: "", // Add your deployed link later
+    github: "https://github.com/mahatasourav/DocNest", // Update this if your repo name is different
+    image: docnest, // Replace with your actual image variable
+  },
+
+  {
+    title: "Sourav Mahata Portfolio",
+    description:
+      "A personal portfolio website to showcase my projects, skills, and experience as a full-stack developer. Designed with a focus on clean UI, modern design, and performance optimization.",
+    techStack: [
+      "React.js",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Vite",
+      "Git",
+      "GitHub",
+      "Vercel",
+    ],
+    link: "https://souravmahata.vercel.app/",
+    github: "https://github.com/mahatasourav/Portfolio",
+    image: souravportfolioImage,
+  },
+  {
     title: "Airbnb Clone",
     description:
       "A full-stack booking platform inspired by Airbnb, built using server-side rendering with EJS templates, Express.js, Node.js, and MongoDB (Mongoose). Users can browse listings, create accounts, and make property bookings.",
@@ -30,26 +73,6 @@ const projectsData = [
     link: "https://github.com/sourav-airbnb-clone",
     github: "https://github.com/mahatasourav/airbnb-clone",
     image: airbnb,
-  },
-
-  {
-    title: "Focus Flow (Productivity App)",
-    description:
-      "FocusFlow is your all-in-one productivity partner — designed to simplify task management and personal finance tracking.",
-    techStack: [
-      "React.js",
-      "Tailwind",
-      "Node.js",
-      "Express.js",
-      "Mongodb",
-      "Git",
-      "Github",
-      "Vercel",
-      "Rest API",
-    ],
-    link: "https://focus-flow-pied.vercel.app/",
-    github: "https://github.com/mahatasourav/FocusFlow",
-    image: focusflow,
   },
 ];
 

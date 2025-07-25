@@ -43,7 +43,7 @@ const projectsData = [
       "React Toastify",
       "Context API",
     ],
-    link: "", // Add your deployed link later
+    link: "https://doc-nest.netlify.app/", // Add your deployed link later
     github: "https://github.com/mahatasourav/DocNest", // Update this if your repo name is different
     image: docnest, // Replace with your actual image variable
   },

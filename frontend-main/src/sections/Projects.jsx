@@ -41,7 +41,6 @@ const projectsData = [
       "Axios",
       "React Router",
       "React Toastify",
-      "Context API",
     ],
     link: "https://doc-nest.netlify.app/", // Add your deployed link later
     github: "https://github.com/mahatasourav/DocNest", // Update this if your repo name is different
@@ -60,6 +59,8 @@ const projectsData = [
       "Git",
       "GitHub",
       "Vercel",
+      "Node.js",
+      "express.js",
     ],
     link: "https://souravmahata.vercel.app/",
     github: "https://github.com/mahatasourav/Portfolio",

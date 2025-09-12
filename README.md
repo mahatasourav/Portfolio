@@ -43,6 +43,9 @@ Deployment: Vercel
 
 - Optimized performance and UI/UX for a professional portfolio experience
 
+
+---
+
 📸 Screenshots / Demo
 
 Homepage:
@@ -56,27 +59,31 @@ Blog Section:
 
 Contact Form:
 
+---
 
-💡 Replace the image paths with your actual screenshot files.
 
-##⚡ Challenges & Learnings
+## ⚡ Challenges & Learnings
 
-Implemented smooth animations and interactive UI with Framer Motion
+- Implemented smooth animations and interactive UI with Framer Motion
 
-Learned Tailwind CSS utilities for responsive and modern styling
+- Learned Tailwind CSS utilities for responsive and modern styling
 
-Integrated backend API for dynamic contact form management
+- Built and integrated backend API for dynamic contact form management using Nodemailer to send automatic replies
 
-Optimized frontend-backend interactions for seamless user experience
+- Implemented dark/light mode toggle for improved user experience
 
-Gained experience deploying full-stack apps on Vercel
+- Optimized frontend-backend interactions for seamless performance
 
-📫 Contact
+- Gained hands-on experience deploying full-stack apps on Verce
 
-📫 Contact
 
-**GitHub:** https://github.com/mahatasourav
 
-**LinkedIn:** https://www.linkedin.com/in/mahatasourav/
+## 📫 Contact
 
-**Email:** mahatasourav35@gmail.com
+[![GitHub](https://img.shields.io/badge/GitHub-MahataSourav-181717?style=flat&logo=github&logoColor=white)](https://github.com/mahatasourav)
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-MahataSourav-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mahatasourav/)
+
+[![Email](https://img.shields.io/badge/Email-mahatasourav35@gmail.com-D14836?style=flat&logo=gmail&logoColor=white)](mailto:mahatasourav35@gmail.com)
+
+

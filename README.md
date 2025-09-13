@@ -2,11 +2,9 @@
 
 My Personal Portfolio is a responsive and dynamic website built to showcase my projects, blogs, and skills as a Full-Stack Developer. It demonstrates modern web development techniques, animations, and an interactive interface to impress recruiters and visitors alike.
 
- [![Live Demo](https://img.shields.io/badge/Live%20Demo-Portfolio-blue)](https://souravmahata.vercel.app/)
-
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Portfolio-blue)](https://souravmahata.vercel.app/)
 
 ---
-
 
 ## ✨ Features
 
@@ -19,7 +17,6 @@ My Personal Portfolio is a responsive and dynamic website built to showcase my p
 - **Animated UI:** Smooth animations using Framer Motion for modern, interactive experience
 
 - **Contact Form:** Integrated with nodemailer for dynamic form submissions
-
 
 ## 🛠️ Tech Stack
 
@@ -43,24 +40,17 @@ Deployment: Vercel
 
 - Optimized performance and UI/UX for a professional portfolio experience
 
-
 ---
 
 📸 Screenshots / Demo
 
 Homepage:
 
-
 Projects Section:
-
-
-Blog Section:
-
 
 Contact Form:
 
 ---
-
 
 ## ⚡ Challenges & Learnings
 
@@ -76,8 +66,6 @@ Contact Form:
 
 - Gained hands-on experience deploying full-stack apps on Verce
 
-
-
 ## 📫 Contact
 
 [![GitHub](https://img.shields.io/badge/GitHub-MahataSourav-181717?style=flat&logo=github&logoColor=white)](https://github.com/mahatasourav)
@@ -85,5 +73,3 @@ Contact Form:
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-MahataSourav-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mahatasourav/)
 
 [![Email](https://img.shields.io/badge/Email-mahatasourav35@gmail.com-D14836?style=flat&logo=gmail&logoColor=white)](mailto:mahatasourav35@gmail.com)
-
-

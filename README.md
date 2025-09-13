@@ -44,11 +44,14 @@ Deployment: Vercel
 
 📸 Screenshots / Demo
 
-Homepage:
+### Homepage
+![Homepage](./frontend-main/src/assets/HomePag.png)
 
-Projects Section:
+### Projects Section
+![Projects Section](./frontend-main/src/assets/Projects.png)
 
-Contact Form:
+### Contact Form
+![Contact Form](./frontend-main/src/assets/Contact.png)
 
 ---
 
@@ -73,3 +76,4 @@ Contact Form:
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-MahataSourav-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mahatasourav/)
 
 [![Email](https://img.shields.io/badge/Email-mahatasourav35@gmail.com-D14836?style=flat&logo=gmail&logoColor=white)](mailto:mahatasourav35@gmail.com)
+

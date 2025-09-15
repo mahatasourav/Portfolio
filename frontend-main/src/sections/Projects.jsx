@@ -4,6 +4,7 @@ import airbnb from "../assets/project-airbnb.png";
 import { FaGithub } from "react-icons/fa";
 import docnest from "../assets/project-docnest.png";
 import souravportfolioImage from "../assets/project-souravportfolio.png"; // Replace with your actual portfolio image
+import projecttunemood from "../assets/project-tunemood.png";
 
 const projectsData = [
   {
@@ -67,13 +68,30 @@ const projectsData = [
     image: souravportfolioImage,
   },
   {
-    title: "Airbnb Clone",
+    title: "Stay Quick",
     description:
       "A full-stack booking platform inspired by Airbnb, built using server-side rendering with EJS templates, Express.js, Node.js, and MongoDB (Mongoose). Users can browse listings, create accounts, and make property bookings.",
     techStack: ["EJS", "Express.js", "Node.js", "MongoDB"],
     link: "https://github.com/sourav-airbnb-clone",
     github: "https://github.com/mahatasourav/airbnb-clone",
     image: airbnb,
+  },
+  {
+    title: "TuneMood",
+    description:
+      "A full-stack music player that recommends songs based on your mood and activity. Users can play, pause, skip tracks, and browse curated playlists, with a responsive interface built for both desktop and mobile.",
+    techStack: [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Tailwind CSS",
+      "Framer Motion",
+      "JWT Authentication",
+    ],
+    link: "https://tunemood-vcjp.onrender.com/",
+    github: "https://github.com/mahatasourav/TuneMood",
+    image: projecttunemood,
   },
 ];
 

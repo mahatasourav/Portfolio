@@ -8,11 +8,17 @@ import {
   FaEnvelope,
   FaCode,
 } from "react-icons/fa";
+import { FaBlogger } from "react-icons/fa";
 import { Link } from "react-scroll"; // import it
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
+  const location = useLocation(); // get current URL
+  const navigate = useNavigate();
+
+  const isHome = location.pathname === "/";
 
   const navItems = [
     { id: "home", label: "Home", icon: <FaHome className="text-xl" /> },
@@ -55,34 +61,69 @@ const Navbar = () => {
           </motion.div>
 
           {/* Enhanced Desktop Menu */}
-          <ul className="hidden md:flex space-x-8 text-gray-700 dark:text-gray-200 text-lg font-medium">
-            {navItems.map((item) => (
-              <motion.li
-                key={item.id}
-                whileHover={{ y: -2 }}
-                whileTap={{ y: 0 }}
+          <div className="flex items-center space-x-6">
+            {/* Navigation items (scroll to sections) */}
+            {isHome ? (
+              <ul className="hidden md:flex space-x-8 text-gray-700 dark:text-gray-200 text-lg font-medium">
+                {navItems.map((item) => (
+                  <motion.li
+                    key={item.id}
+                    whileHover={{ y: -2 }}
+                    whileTap={{ y: 0 }}
+                  >
+                    <a
+                      href={`#${item.id}`}
+                      onClick={(e) => {
+                        e.preventDefault(); // prevent default jump
+                        handleClick(item.id); // update active section
+                        const section = document.getElementById(item.id);
+                        if (section) {
+                          section.scrollIntoView({ behavior: "smooth" });
+                        }
+                      }}
+                      className={`relative px-3 py-2 flex items-center space-x-2 rounded-lg transition-all duration-300 hover:bg-gray-100 dark:hover:bg-gray-800 ${
+                        activeSection === item.id
+                          ? "text-blue-600 dark:text-blue-400"
+                          : ""
+                      }`}
+                    >
+                      {item.icon}
+                      <span>{item.label}</span>
+                      {activeSection === item.id && (
+                        <motion.span
+                          layoutId="underline"
+                          className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 dark:bg-blue-400"
+                        />
+                      )}
+                    </a>
+                  </motion.li>
+                ))}
+              </ul>
+            ) : (
+              <button
+                onClick={() => navigate("/")}
+                className="text-lg font-medium text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors hidden md:flex "
               >
-                <a
-                  href={`#${item.id}`}
-                  onClick={() => handleClick(item.id)}
-                  className={`relative px-3 py-2 flex items-center space-x-2 rounded-lg transition-all duration-300 hover:bg-gray-100 dark:hover:bg-gray-800 ${
-                    activeSection === item.id
+                ← Back to Home
+              </button>
+            )}
+
+            {/* Blog link (navigate to different page) */}
+            {isHome && (
+              <NavLink
+                to="/blog"
+                className={({ isActive }) =>
+                  `text-lg font-medium transition-colors hidden md:flex ${
+                    isActive
                       ? "text-blue-600 dark:text-blue-400"
-                      : ""
-                  }`}
-                >
-                  {item.icon}
-                  <span>{item.label}</span>
-                  {activeSection === item.id && (
-                    <motion.span
-                      layoutId="underline"
-                      className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 dark:bg-blue-400"
-                    />
-                  )}
-                </a>
-              </motion.li>
-            ))}
-          </ul>
+                      : "text-gray-700 dark:text-gray-200"
+                  }`
+                }
+              >
+                Blog
+              </NavLink>
+            )}
+          </div>
 
           <div className="flex items-center space-x-4">
             <DarkModeToggle />
@@ -138,30 +179,70 @@ const Navbar = () => {
             transition={{ type: "spring", stiffness: 100, damping: 20 }}
             className="fixed top-0 left-0 h-screen w-72 bg-white/95 dark:bg-gray-900/95 backdrop-blur-lg shadow-2xl"
           >
-            <motion.ul className="flex flex-col space-y-6 mt-20 p-8">
-              {navItems.map((item) => (
-                <motion.li
-                  key={item.id}
-                  initial={{ x: -20, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  transition={{ delay: navItems.indexOf(item) * 0.1 }}
-                  whileHover={{ x: 10 }}
-                >
-                  <a
-                    href={`#${item.id}`}
-                    onClick={() => handleClick(item.id)}
-                    className={`flex items-center space-x-4 p-2 rounded-lg transition-all duration-300 ${
-                      activeSection === item.id
-                        ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-gray-800"
-                        : "text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800"
-                    }`}
+            <motion.div>
+              {isHome ? (
+                <motion.ul className="flex flex-col space-y-6 mt-20 p-8">
+                  {navItems.map((item) => (
+                    <motion.li
+                      key={item.id}
+                      initial={{ x: -20, opacity: 0 }}
+                      animate={{ x: 0, opacity: 1 }}
+                      transition={{ delay: navItems.indexOf(item) * 0.1 }}
+                      whileHover={{ x: 10 }}
+                    >
+                      <button
+                        onClick={() => {
+                          const section = document.getElementById(item.id);
+                          if (section)
+                            section.scrollIntoView({ behavior: "smooth" });
+                          handleClick(item.id);
+                          setIsOpen(false); // close mobile menu
+                        }}
+                        className={`flex items-center space-x-4 p-2 rounded-lg transition-all duration-300 ${
+                          activeSection === item.id
+                            ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-gray-800"
+                            : "text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800"
+                        }`}
+                      >
+                        {item.icon}
+                        <span className="text-lg font-medium">
+                          {item.label}
+                        </span>
+                      </button>
+                    </motion.li>
+                  ))}
+                  {/* Blog link */}
+                  <li>
+                    <NavLink
+                      to="/blog"
+                      onClick={() => setIsOpen(false)}
+                      className={({ isActive }) =>
+                        `block p-2 rounded-lg text-lg font-medium transition-colors mt-2${
+                          isActive
+                            ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-gray-800"
+                            : "text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800"
+                        }`
+                      }
+                    >
+                      Blog
+                    </NavLink>
+                  </li>
+                </motion.ul>
+              ) : (
+                // On /blog page, show only Back to Home
+                <div className="flex flex-col mt-20 p-8">
+                  <button
+                    onClick={() => {
+                      navigate("/");
+                      setIsOpen(false);
+                    }}
+                    className="text-lg font-medium text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                   >
-                    {item.icon}
-                    <span className="text-lg font-medium">{item.label}</span>
-                  </a>
-                </motion.li>
-              ))}
-            </motion.ul>
+                    ← Back to Home
+                  </button>
+                </div>
+              )}
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

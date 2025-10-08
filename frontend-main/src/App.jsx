@@ -1,14 +1,11 @@
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer";
-import Hero from "./sections/Hero";
-import About from "./sections/About";
-import Skills from "./sections/Skills";
-import Experience from "./sections/Experience";
-import Projects from "./sections/Projects";
-import Contact from "./sections/Contact";
+import Home from "./Pages/Home";
 import ParticleBackground from "./components/ParticleBackground";
 import { useEffect } from "react";
-import Education from "./sections/Education";
+import { Route, Router, Routes } from "react-router-dom";
+import Blog from "./Pages/Blog";
+import BlogDetails from "./Pages/BlogDetails";
 
 function App() {
   useEffect(() => {
@@ -31,29 +28,14 @@ function App() {
   return (
     <div className="bg-white dark:bg-black text-black dark:text-white relative">
       <Navbar />
-      <main className="mt-5">
-        <section id="hero">
-          <Hero />
-        </section>
-        <section id="about">
-          <About />
-        </section>
-        <section id="skills">
-          <Skills />
-        </section>
-        <section id="education">
-          <Education />
-        </section>
-        <section id="experience">
-          <Experience />
-        </section>
-        <section id="projects">
-          <Projects />
-        </section>
-        <section id="contact">
-          <Contact />
-        </section>
-      </main>
+
+      <div className="mt-16">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogDetails />} />
+        </Routes>
+      </div>
       <Footer />
     </div>
   );

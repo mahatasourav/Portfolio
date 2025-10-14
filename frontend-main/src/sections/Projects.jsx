@@ -43,7 +43,7 @@ const projectsData = [
       "React Router",
       "React Toastify",
     ],
-    link: "https://doc-nest.netlify.app/", // Add your deployed link later
+    link: "https://docnest-z4gx.onrender.com/", // Add your deployed link later
     github: "https://github.com/mahatasourav/DocNest", // Update this if your repo name is different
     image: docnest, // Replace with your actual image variable
   },
@@ -67,15 +67,15 @@ const projectsData = [
     github: "https://github.com/mahatasourav/Portfolio",
     image: souravportfolioImage,
   },
-  {
-    title: "Stay Quick",
-    description:
-      "A full-stack booking platform inspired by Airbnb, built using server-side rendering with EJS templates, Express.js, Node.js, and MongoDB (Mongoose). Users can browse listings, create accounts, and make property bookings.",
-    techStack: ["EJS", "Express.js", "Node.js", "MongoDB"],
-    link: "https://github.com/sourav-airbnb-clone",
-    github: "https://github.com/mahatasourav/airbnb-clone",
-    image: airbnb,
-  },
+  // {
+  //   title: "Stay Quick",
+  //   description:
+  //     "A full-stack booking platform inspired by Airbnb, built using server-side rendering with EJS templates, Express.js, Node.js, and MongoDB (Mongoose). Users can browse listings, create accounts, and make property bookings.",
+  //   techStack: ["EJS", "Express.js", "Node.js", "MongoDB"],
+  //   link: "https://github.com/sourav-airbnb-clone",
+  //   github: "https://github.com/mahatasourav/airbnb-clone",
+  //   image: airbnb,
+  // },
   {
     title: "TuneMood",
     description:

@@ -1,4 +1,4 @@
-import souravimg from "../assets/souravimg2.jpg";
+import souravimg from "../assets/souravimg1.png";
 import { motion } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
@@ -183,6 +183,7 @@ const Hero = () => {
                 width: "350px",
                 height: "500px",
                 objectFit: "cover",
+                objectPosition: "top",
               }}
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 200 }}
